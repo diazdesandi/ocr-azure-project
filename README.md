@@ -1,60 +1,40 @@
-Collecting workspace information
+# OCR Azure Project
 
-# OCR Project
-
-This project consists of two main parts: 
-
-ocr-backend
-
- and 
-
-ocr-frontend
-
-.
+This project consists of two main parts: **ocr-backend** and **ocr-frontend**.
 
 ## ocr-backend
 
-The backend is implemented in Go and provides the OCR (Optical Character Recognition) functionality.
+The backend is implemented in Go and provides the OCR (Optical Character Recognition) functionality using Azure services.
 
 ### Project Setup
 
 1. Install dependencies:
 
-```sh
-go mod tidy
-```
+    ```sh
+    go mod tidy
+    ```
 
 2. Run the server:
 
-```sh
-go run cmd/main.go
-```
+    ```sh
+    go run cmd/main.go
+    ```
 
 ### Environment Variables
 
 The backend uses environment variables for configuration. Ensure you have a `.env` file with the necessary variables. Example:
 
-```env
-PORT=8080
-```
+    ```env
+    PORT=8080
+    AZURE_OCR_ENDPOINT=<your-azure-ocr-endpoint>
+    AZURE_OCR_KEY=<your-azure-ocr-key>
+    ```
 
 ### Main Components
 
-- **Main Entry Point**: 
-
-cmd/main.go
-
-
+- **Main Entry Point**: `cmd/main.go`
 - **Environment Initialization**: `utils.InitEnv`
-- **Handlers**: 
-
-handlers.AzureHandler
-
-, 
-
-handlers.CheckStatus
-
-
+- **Handlers**: `handlers.AzureHandler`, `handlers.CheckStatus`
 
 ## ocr-frontend
 
@@ -76,68 +56,44 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 1. Install dependencies:
 
-```sh
-npm install
-```
+    ```sh
+    npm install
+    ```
 
 2. Compile and Hot-Reload for Development:
 
-```sh
-npm run dev
-```
+    ```sh
+    npm run dev
+    ```
 
 3. Type-Check, Compile and Minify for Production:
 
-```sh
-npm run build
-```
+    ```sh
+    npm run build
+    ```
 
 4. Run Unit Tests with [Vitest](https://vitest.dev/):
 
-```sh
-npm run test:unit
-```
+    ```sh
+    npm run test:unit
+    ```
 
 5. Lint with [ESLint](https://eslint.org/):
 
-```sh
-npm run lint
-```
+    ```sh
+    npm run lint
+    ```
 
 ### Main Components
 
-- **Main Layout**: 
-
-HomeLayout.vue
-
-
-- **Tailwind CSS Configuration**: 
-
-tailwind.config.js
-
-, 
-
-tailwind.css
-
-
+- **Main Layout**: `HomeLayout.vue`
+- **Tailwind CSS Configuration**: `tailwind.config.js`, `tailwind.css`
 
 ## Common
 
 ### Version Control
 
-This project uses Git for version control. Ensure you have 
-
-.gitignore
-
- files in both 
-
-ocr-backend
-
- and 
-
-ocr-frontend
-
- to exclude unnecessary files from version control.
+This project uses Git for version control. Ensure you have `.gitignore` files in both **ocr-backend** and **ocr-frontend** to exclude unnecessary files from version control.
 
 ### License
 
